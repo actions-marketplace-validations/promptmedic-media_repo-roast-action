@@ -1,0 +1,14 @@
+name: 'Repo Roast: AI PR Review for Vibe Coders'
+description: 'Scores every pull request 0-10 and flags security holes, bugs and quick wins. Bring your own OpenAI-compatible key.'
+author: 'Prompt Medic'
+branding: { icon: 'shield', color: 'green' }
+inputs:
+  api-key: { description: 'OpenAI-compatible API key (OpenAI, OpenRouter, Groq, ...)', required: true }
+  base-url: { description: 'API base URL', default: 'https://api.openai.com/v1' }
+  model: { description: 'Model name', default: 'gpt-4o-mini' }
+  github-token: { description: 'Token used to read the diff and comment', default: '${{ github.token }}' }
+  max-diff-chars: { description: 'Truncate the diff after this many characters', default: '60000' }
+  focus: { description: 'Optional focus, e.g. "auth and payments"', default: '' }
+outputs:
+  score: { description: 'Roast score 0-10' }
+runs: { using: 'node20', main: 'index.js' }
