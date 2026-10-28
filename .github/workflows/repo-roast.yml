@@ -1,0 +1,13 @@
+name: Repo Roast (dogfood)
+on: pull_request
+permissions: { contents: read, pull-requests: write }
+jobs:
+  roast:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: promptmedic-media/repo-roast-action@v1
+        with:
+          api-key: ${{ secrets.ROAST_API_KEY }}
+          base-url: https://openrouter.ai/api/v1
+          model: x-ai/grok-4.3
