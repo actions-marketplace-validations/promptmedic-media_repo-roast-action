@@ -29,7 +29,7 @@ jobs:
           # focus: auth and payments                  # optional
 ```
 
-## Example comment
+## Example comment ([live demo PR](https://github.com/promptmedic-media/repo-roast-action/pull/1))
 > ## 🔥 Repo Roast: 🟡 6/10
 > > Solid SaaS skeleton, but auth logic forgot to hang up the phone.
 > ### 🔒 Security
